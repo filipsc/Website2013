@@ -1,0 +1,180 @@
+body{
+	font-family:"Georgia", "Times New Roman", "serif";
+	z-index:0;
+	width: 1300px;
+	margin: 0 auto;
+}
+
+h2{
+	font-family:"Freestyle Script", "serif";
+	/*font-size:30px;*/
+}
+
+header{
+	text-align:center;
+	background-image:url("../img/flag.jpg");
+	background-position:center;
+	background-size:100%;
+}
+
+footer{
+	width:100%;
+}
+
+table.contact-info{
+	border-style:double;
+	border-width:5px;
+	border-color:black;
+	padding:5px;
+	width:48%;
+	color:white;
+	background-image:url("../img/wooden-board.jpg");
+	float:left;
+}
+
+table.contact-info th{
+	font-family:"Georgia", "Times New Roman", "serif";
+}
+
+div.menu{
+	padding:10px;
+	background-color:navy;
+	width:625px;
+	height:100%;
+	float:left;
+}
+
+div.menu table {background-color: white; width: 600px;}
+div.menu table td, table th {width: 120px; vertical-align: middle; text-align: center;}
+div.menu table thead tr {font-size: 24px;}
+div.menu table tr {outline: thin solid black;}
+div.menu table tbody tr span, table tbody tr p{display: inline;}
+
+div.menu, div.order {height: 450px; overflow-y: scroll;}
+
+/*
+div.menu table{
+	padding:0px;
+	background-color:white;
+	display:block;
+}
+
+div.menu table tr{
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+	display:block;
+}
+
+div.menu table tr td{
+	border-width:1px;
+	border-right-style:solid;
+	border-left-style:none;
+	border-top-style:none;
+	border-bottom-style:none;
+	border-color:black;
+	width:19%;
+}
+
+div.menu table tr td span{
+	margin-right:2px;
+}*/
+
+div.order{
+	padding:10px;
+	background-color:green;
+	width:600px;
+	/*height:100%;*/
+	float:right;
+}
+
+div.order table{
+	padding:0px;
+	background-color:white;
+	display:block;
+}
+
+div.order table tr{
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+	display:block;
+}
+
+div.order table tr td{
+	border-width:1px;
+	border-right-style:solid;
+	border-left-style:none;
+	border-top-style:none;
+	border-bottom-style:none;
+	border-color:black;
+	width:125px;
+}
+
+div.order table tr td span{
+	margin-right:2px;
+}
+
+.order-button{
+	padding:5px;
+	width:48%;
+	background-image:url("../img/pizza-oven.jpg");
+	background-size:100%;
+	font-size:40px;
+	font-style:italic;
+	text-transform:uppercase;
+	color:white;
+	float:left;
+}
+
+.top10 {width: 100%; background-color: red;}
+.top10 ol {list-style-type: decimal; display: inline-block; text-align: center;}
+.top10 li {display:inline-block; margin-left: 10px;}
+.top10 h2 {display:inline-block; margin: 0px; margin-left: 20px;}
+
+#fog{
+	position:fixed;
+	background-color:rgba(0, 0, 0, 0.3);
+	height:100%;
+	width:100%;
+	z-index:100;
+}
+
+div#paydesk{	/*#paydesk is really just a receipt, that is however to late to change now*/
+	padding:10px;
+	background-color:navy;
+	color:orange;
+	position:fixed;
+	top:0px;
+	left:132px;
+	width:80%;
+	height:80%;
+	z-index:101;
+}
+
+div#paydesk table{
+	padding:0px;
+	background-color:white;
+	display:block;
+}
+
+div#paydesk table tr{
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+	display:block;
+}
+
+div#paydesk table tr td{
+	border-width:1px;
+	border-right-style:solid;
+	border-left-style:none;
+	border-top-style:none;
+	border-bottom-style:none;
+	border-color:black;
+	width:19%;
+}
+
+div#paydesk table tr td span{
+	margin-right:2px;
+}

@@ -1,0 +1,72 @@
+/* wrap and dynamicdiv stuff */
+#wrap {margin: 0 auto; width: 800px;}
+
+/* navigation menu */
+nav {height: 20px; background-color: green;}
+nav a {text-decoration: none; display: inline-block; width: 100px; text-align: center; vertical-align: middle;}
+
+/* Styling for for recpies and stock */
+ul#list {/* Stuff about the whole list for stock and recipes */}
+ul#list li {list-style: none;}
+ul#list h1 {font-size: 44px; font-weight: bold;}
+ul#list > li:nth-child(odd) {background-color: white;}
+ul#list > li:nth-child(even) {background-color: lightgray;}
+ul#list >li > div.listobj {background-color: inherit;}
+ul#list li h2 {font-size: 32px; font-weight: bold;}
+
+/* icon backgrounds */
+span.icon {display: inline-block; width: 48px; height: 48px; background-size: 100%; text-indent: -13337px;}
+span.remove, span.add {width: 24px; height: 24px;}
+span.delete {background-image: url("../img/trash.png");}
+span.add {background-image: url("../img/add.png");}
+span.edit {background-image: url("../img/pencil.png");}
+span.done {background-image: url("../img/tick.png");}
+span.cancel {background-image: url("../img/cross.png");}
+span.remove {background-image: url("../img/minus.png");}
+
+/* desc */
+span.desc {display: inline-block; width: 100px;}
+
+/*styling for editor */
+input {width: 50px; margin-left: 2px;}
+input.name {width: 100px;}
+textarea {display: block;}
+.listobj {width: 800px;}
+
+/* positioning stuff for editor */
+ul#list li {position: relative;}
+div.buttons {position: absolute; bottom: 0px; right: 0px;}
+.listobj.noeditor {position: absolute; top: 0px; left: 0px; z-index: 202;}
+.listobj.editor {position: absolute; top: 0px; left: 0px; z-index: 201;}
+
+
+/******************************** STYLING FOR TABLE ***************************/
+table td, table th {width: 200px; vertical-align: middle; text-align: center;}
+table thead tr {background-color: blue; font-size: 24px; height: 30px;}
+table tbody tr {height: 24px;}
+table tbody tr:nth-child(odd) {background-color: yellow;}
+table tbody tr:nth-child(even) {background-color: green;}
+table tbody span.icon {background-size: 24px; background-repeat: no-repeat; height: 24px; width: 24px;}
+
+/******************************** STYLING FOR STATS ****************************/
+#stats {position: relative;}
+#stats h2 {font-size: 36px; text-align: center;}
+
+#stats #pizzastats {width: 600px; font-size: 18px}
+#stats .top10 {width: 200px; position: absolute; top: 0px; right: 0px; background-color: red;}
+#stats .top10 ol {list-style-type: decimal; padding-left: 80px;}
+#stats .top10 span.second {margin-left: 10px;}
+
+/********************************** STYLING FOR STOCK ***************************/
+.icon:hover {cursor: pointer;}
+
+
+/************************** STYLING FOR VIEWER ******************/
+/* Input styling */
+input[readonly] {background-color: lightgray;}
+#viewer input {width: 90%;}
+
+
+
+
+

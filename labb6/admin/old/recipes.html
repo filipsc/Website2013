@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="style.css" />
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="./js/recipes.js"></script>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrap">
+		<nav> 
+			<a href="./stats.html">Stats</a>
+			<a href="./recipes.html">Recipes</a>
+			<a href="./stock.html">Stock</a>
+		</nav>
+
+		<ul id="list">
+			<h1>Pizzas</h1>
+			<li data-pizzaID="1337">
+				<div class="listobj noeditor"> <!-- A example pizza recipe, no editor -->
+					<h2><span class="name">Placeholder</span></h2>
+					<p><span class="desc">Price:</span><span  class="price">1337</span></p>
+					<ul class="ingredients">
+						<li><span class="desc">Temp</span><span class="amount">111</span></li>
+						<li><span class="desc">Temp</span><span class="amount">123</span></li>
+					</ul>
+					<div class="buttons">
+						<span class="icon edit">Edit</span>
+						<span class="icon delete">Delete</span>
+					</div>
+				</div>
+				<div class="listobj editor"> <!-- A example pizza recipe, editor -->
+					<div><span class="desc">Name:</span><input type="text" class="name" value="Placeholder"></div>
+					<div><span class="desc">Price:</span><input type="number" class="price" value="1337"></div>
+					<ul class="ingredients">
+						<li><span class="desc">Temp</span><input type="number" value="111"><span class="icon remove">Delete</span></li>
+						<li><span class="desc">Temp</span><input type="number" value="123"><span class="icon remove">Delete</span></li>
+						<span class="icon add">Add</span>
+					</ul>
+					<div class="buttons">
+						<span class="icon done">Done</span>
+						<span class="icon cancel">Cancel</span>
+					</div> 
+				</div>
+			</li>
+			<li data-pizzaID="1338">
+				<div class="listobj noeditor"> <!-- A example pizza recipe, no editor -->
+					<h2><span class="name">Placeholder</span></h2>
+					<p><span class="desc">Price:</span><span  class="price">1337</span></p>
+					<ul class="ingredients">
+						<li><span class="desc">Temp</span><span class="amount">111</span></li>
+						<li><span class="desc">Temp</span><span class="amount">123</span></li>
+					</ul>
+					<div class="buttons">
+						<span class="icon edit">Edit</span>
+						<span class="icon delete">Delete</span>
+					</div>
+				</div>
+				<div class="listobj editor"> <!-- A example pizza recipe, editor -->
+					<div><span class="desc">Name:</span><input type="text" class="name" value="Placeholder"></div>
+					<div><span class="desc">Price:</span><input type="number" class="price" value="1337"></div>
+					<ul class="ingredients">
+						<li><span class="desc">Temp</span><input type="number" value="111"><span class="icon remove">Delete</span></li>
+						<li><span class="desc">Temp</span><input type="number" value="123"><span class="icon remove">Delete</span></li>
+						<span class="icon add">Add</span>
+					</ul>
+					<div class="buttons">
+						<span class="icon done">Done</span>
+						<span class="icon cancel">Cancel</span>
+					</div> 
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>

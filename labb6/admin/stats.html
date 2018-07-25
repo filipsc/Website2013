@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="style.css" />
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="./js/jquery.tablesorter.min.js"></script>
+  <script src="./js/stats.js"></script>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+	<div id="wrap">
+		<nav> 
+			<a href="./stats.html">Stats</a>
+			<a href="./recipes.html">Recipes</a>
+			<a href="./stock.html">Stock</a>
+		</nav>
+		<div id="stats">
+			<div id="pizzastats">
+			    <table>
+					<thead>
+		 				<tr>
+		    				<th>Pizza</th>
+		    				<th>Price</th>
+		    				<th>Units sold</th>
+		 				 </tr>
+					</thead>
+					<tbody>
+						<tr data-pizzaid="123">
+							<td class="pizzaname">Vesuvio</td>
+						    <td class="pizzaprice">1337</td>
+						    <td class="pizzaunits">42</td>
+						</tr>
+						<tr data-pizzaid="124">
+							<td class="pizzaname">Calzone</td>
+						    <td class="pizzaprice">1234</td>
+						    <td class="pizzaunits">11</td>
+						</tr>
+						<tr data-pizzaid="125">
+							<td class="pizzaname">De Chef</td>
+						    <td class="pizzaprice">301</td>
+						    <td class="pizzaunits">404</td>
+						</tr>
+						<tr data-pizzaid="126">
+							<td class="pizzaname">Calzone special</td>
+						    <td class="pizzaprice">222</td>
+						    <td class="pizzaunits">13</td>
+						</tr>
+					</tbody>
+	     		</table>
+			</div>
+			<div class="top10"> <!-- påbörjad... -->
+				<h2>TOP 10</h2>
+				<ol>
+					<li><span class="pizza-name">temp</span><span class="second">20</span>st</li>
+					<li><span class="pizza-name">temp</span><span class="second">20</span>st</li>
+					<li><span class="pizza-name">temp</span><span class="second">20</span>st</li>
+					<li><span class="pizza-name">temp</span><span class="second">20</span>st</li>
+					<li><span class="pizza-name">temp</span><span class="second">20</span>st</li>
+					<li><span class="pizza-name">temp</span><span class="second">20</span>st</li>
+					<li><span class="pizza-name">temp</span><span class="second">20</span>st</li>
+					<li><span class="pizza-name">temp</span><span class="second">20</span>st</li>
+					<li><span class="pizza-name">temp</span><span class="second">20</span>st</li>
+					<li><span class="pizza-name">temp</span><span class="second">20</span>st</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</body>

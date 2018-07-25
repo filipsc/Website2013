@@ -1,0 +1,73 @@
+/* RESET STUFF*/
+/*p{
+	margin: 0px;
+	padding: 0px;
+}*/
+	
+/* OTHER STUFF */
+body {
+	background-color: black;
+	color: white;
+}
+
+fieldset {
+	margin-bottom:10px;
+	border-width:5px;
+	padding:5px;
+	border-style: solid;
+	border-color:blue;
+	border-radius: 10px;
+	width: auto;
+	display: inline-block;
+}
+
+legend{
+	background-color:blue;
+	border-radius:5px;
+}
+
+input{
+	background-color:black;
+	color:white;
+	border-radius:5px;
+	display:inline;
+}
+
+label{
+	display:inline-block;
+	width:145px;
+	text-align:right;
+}
+
+button{
+	background-color:blue;
+	color:white;
+	border-radius:5px;
+}
+
+div{
+	margin-bottom:10px;
+}
+
+#showpw{
+	text-align:left;
+}
+
+button[type=submit]{
+	margin-left: 90px;
+}
+
+#warning{
+	margin-left:150px;
+	display:inline-block;
+	color:red;
+	opacity:0;
+}
+
+#userwarning{
+	margin-left:150px;
+	display:inline-block;
+	color:red;
+	opacity:0;
+}
+

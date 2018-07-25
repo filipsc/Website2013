@@ -1,0 +1,56 @@
+body {background-color: #E5E5E5;}
+div#container {
+	margin: 0 auto; /* Center it*/
+	width: 500px;
+	height: 220px; /* Make room for the picture and ul*/
+	border-width: 5px;
+	border-style: solid;
+	border-color: white;
+	position: relative;
+	background-color: white;
+}
+
+ul {
+	/* Position it below the div containing a picture*/
+	position: absolute;
+	bottom: 0px;
+}
+
+li {
+	background-color: white;
+	float:left;
+	text-align: center;
+	width:100px;
+	height: 20px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	display: block; /* Take upp the full box */
+	border-style:solid;
+	border-top-width:5px; 
+	border-top-color: white;
+}
+
+a:hover {
+	background-color:grey;
+	border-top-color: black;
+	color: white;
+}
+
+div#wrap {
+	width:500px; 
+	height:200px; 
+	overflow: hidden;
+}
+
+div#wrap div {height:inherit; position:relative;} /* Height for the image */
+
+div#wrap div h1 {position:absolute; top:40px; right:40px; font-size: 36px; color: white;}
+/* Background images */
+div#one {background-image: url("./img/one.jpg");}
+div#two {background-image: url("./img/two.jpg");}
+div#three {background-image: url("./img/three.jpg");}
+div#four {background-image: url("./img/four.jpg");}
+div#five {background-image: url("./img/five.jpg");}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" href="css/style.css" />
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="js/jquery.tablesorter.min.js"></script>
+  <script src="js/order.js"></script>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+  
+<body>
+	<header>
+		<h2>I told ya we serve no pizza yet</h2>
+	</header>
+	<div class="top10"> 
+		<h2>TOP 10</h2>
+		<ol>
+			<!-- Added through js -->
+		</ol>
+	</div>
+	<div>
+		<div class="menu">
+			<h3>Menu</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Pizza</th>
+						<th>Description</th>
+						<th>Ingredients</th>
+						<th>Popularity</th>
+						<th>Add</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!--- Data added through js-->
+				</tbody>
+			</table>
+			<a href="./index.html">Back to the home-page</a>
+		</div>
+		<div class="order">
+			<h3>Order</h3>
+			<table>
+			</table>
+			<img src="./img/tick.png" id="proceed-order" title="Click to go to the paydesk" alt="confirm"/>
+		</div>
+	</div>
+	<div id="paydesk">
+		<h3>Thank you! Your order had now been sent. This is what you ordered.</h3>
+		<table>
+		</table>
+		<h3>Click the cross to get back to the starting-page.</h3>
+		<a href="./index.html"><img src="./img/tick.png" alt="Ok button"/></a>
+	</div>
+	<div id="fog">
+	</div>
+</body>

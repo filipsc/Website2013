@@ -1,0 +1,48 @@
+/* Reset */
+html, body, div, h1, p, a, img, ul, li { margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent; }
+
+/* ==================  MENU STYLING  ================= */
+
+#js {
+    text-decoration:none; text-align:center;
+    /* float:right; */ position:absolute; top:20px; right: 20px; display:block;
+    /* margin:20px; */ padding:5px 10px;
+    background:white;color:black;
+    border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px;
+    border:1px solid #333;
+}
+
+#js:hover { background:white; color:green;}
+
+body { background:#aaa; line-height:1; }
+#content > img { display:block; width:300px; margin:50px auto 0; }
+
+/*** TARGETS ***/
+#targets { list-style:none; width:300px; margin:10px auto; padding:0; text-align:center; }
+#targets li { display:inline-block; }  
+/*#targets li a span { display:none; } */ 
+#targets li a {  
+    display:inline-block;width:60px; height:60px;  
+    background:url('../images/iconSprite.png') no-repeat 0 0;
+    text-indent:-10000px;
+}    
+#targets li#twitter         a {          /* position: 0 0 */  margin-right:20px; }
+#targets li#twitter:hover   a { background-position:0 -240px; }
+#targets li#delicious       a { background-position:0 -60px;  }  
+#targets li#delicious:hover a { background-position:0 -300px; }
+#targets li#facebook        a { background-position:0 -120px;  margin-left:20px; }  
+#targets li#facebook:hover  a { background-position:0 -360px; }    
+
+
+/*************************/
+/*** Drag & Drop style ***/
+/***        ...        ***/
+/*** your turn to play ***/
+/***        ...        ***/
+#miniature {position: relative; padding: 10px; width: 240px; height: 80px; background-color: grey; border-radius: 5px; border: darkgrey solid;}
+#miniature span {font-size: 24px; color: white;}
+#miniature img {width: 100px; height: 80px; float: right;}
+
+#targets li#twitter.active   a { background-position:0 -240px; }
+#targets li#delicious.active a { background-position:0 -300px; }
+#targets li#facebook.active a { background-position:0 -360px; }    

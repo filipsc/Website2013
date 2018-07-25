@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ 	<meta charset="utf-8">
+ 	<title>Registration and login</title>
+  <link rel="stylesheet" href="reset.css"/>
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Load jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+  <!-- Load the ui thingy -->
+  <script src="./jquery-ui.js"></script>
+
+	<!-- Load your code -->
+	<script src="main.js"></script>
+
+    <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+	<form id="nameadress">
+ 		<fieldset>
+ 		 	<legend>Name and adress</legend>
+			<p id="warning">SSN entry not found</p>
+ 			<div><label>SSN:</label> <input type="text" name="ssn">
+ 				<button type="button" id="ssn-button">Fill in name and adress</button>
+ 			</div>
+  			<div><label>Full name:</label> <input type="text" name="name"></div>
+  			<div><label>Street and number:</label> <input type="text" name="street"></div>
+  			<div><label>Postal code:</label> <input type="text" name="postal"></div>
+  			<div><label>City:</label> <input type="text" name="city"></div>
+ 		</fieldset>
+	</form>
+
+	<form id="login">
+ 		<fieldset>
+ 		 	<legend>Username and password</legend>
+			<p id="userwarning">Username already taken</p>
+ 			<div><label>Username:</label> <input type="text" name="username"><img src="notavailable.png" id="usercheck" alt="usercheck"/></div>
+  		<div id="pw"><label>Password:</label> <input type="password" name="pw"></div>
+  		<div><label></label><input type="checkbox" name="showpw"> <label id="showpw">Show password</label></div>
+   		</fieldset>
+	</form>
+
+	<div><button type="submit">Register</button><p id="registermsg"></p></div>
+</body>

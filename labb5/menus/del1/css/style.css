@@ -1,0 +1,66 @@
+/* reset */
+html, body, div, span, a, img, ul, li {	margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+
+#stack { cursor: pointer; /* ... more? ...*/ }
+#stack > img { cursor:pointer; /* ... more? ...*/ }
+
+
+#stack li a {
+    text-decoration:none;
+    display:inline-block; width:79px; height:79px; /* ... to change, of course. This was just to see the icons in the skeleton ...*/
+}
+
+/* Icons are purely decorative so they are tuck as the background pictures */
+#stack ul li#acrobat   a { background:transparent url('../images/acrobat.png') no-repeat bottom right;}
+#stack ul li#aperture  a { background:transparent url('../images/aperture.png') no-repeat bottom right;}
+#stack ul li#coda      a { background:transparent url('../images/coda.png') no-repeat bottom right;}
+#stack ul li#finder    a { background:transparent url('../images/finder.png') no-repeat bottom right;}
+#stack ul li#photoshop a { background:transparent url('../images/photoshop.png') no-repeat bottom right;}
+#stack ul li#safari    a { background:transparent url('../images/safari.png') no-repeat bottom right;}
+
+#stack a span { 
+    display:none;
+    background-color:#000; color:#fcfcfc; text-align:center; font-size:12px;
+    line-height:12px; padding:3px 10px; margin-top:-9px;
+    border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px;
+    text-shadow: #000 1px 1px 1px;
+}
+
+
+/* Stuff that has been added... */
+#stack			{position: relative; top: 500px; left: 200px;}
+#stack > img 	{position: absolute; z-index: 102;}
+#stack ul		{position: relative; bottom: 25px; z-index: 101;}
+#stack ul li 	{position: absolute; list-style: none;}
+#stack ul li#acrobat   	{z-index: 301;}
+#stack ul li#aperture  	{z-index: 302;}
+#stack ul li#coda      	{z-index: 303;}
+#stack ul li#finder    	{z-index: 304;}
+#stack ul li#photoshop 	{z-index: 305;}
+#stack ul li#safari    	{z-index: 306;}
+
+#stack:hover ul.css  {position: relative; top: -37px;}
+#stack:hover ul li span		{position: relative; top: 40px; left: -60px; display: block} /* when hovering over the li move the text boxes a bit to the left */
+#stack ul.css li:hover span {left:-80px;}
+
+/* The position of the elements when hovering on the stack */
+#stack:hover ul.css li#acrobat   	{top: -435px; left: -10px;}
+#stack:hover ul.css li#aperture  	{top: -356px; left: -20px;}
+#stack:hover ul.css li#coda      	{top: -277px; left: -30px;}
+#stack:hover ul.css li#finder    	{top: -198px; left: -30px;}
+#stack:hover ul.css li#photoshop 	{top: -119px; left: -20px;}
+#stack:hover ul.css li#safari    	{top: -40px; left: -10px;}
+
+/* Transition/animation stuff */
+#stack ul.css li:hover span {
+	transition: all 0.5s linear;
+	-webkit-transition: all 0.5s linear;
+	-moz-transition: all 0.5s linear;
+	-o-transition: all 0.5s linear;
+}
+#stack:hover ul.css li {
+	transition: all 1s linear;
+	-webkit-transition: all 1s linear;
+	-moz-transition: all 1s linear;
+	-o-transition: all 1s linear;
+}

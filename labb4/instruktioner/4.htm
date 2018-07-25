@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Assignments | Website Construction | Summer 2013</title>
+  <meta charset="utf-8">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://www.it.uu.se/favicon">
+  <!-- base href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/" -->
+  <link rel="stylesheet" href="4_files/reset.css">
+  <link rel="stylesheet" href="4_files/style.css">
+
+  <!-- for the font -->
+  <link rel="stylesheet" href="4_files/css.css">
+
+  <script src="4_files/jquery-2.js"></script>
+  <script>window.jQuery || document.write("<script src='js/jquery.min.js'>\x3C/script>")</script>
+  <!--[if IE]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+</head>
+<body class="assignments">
+
+  <header>
+   <div class="wrap">
+      <a id="uulogo" href="http://www.uu.se/" title="Go to Uppsala University website »">Uppsala University</a>
+      <h2><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13">Website Construction <small>Summer 2013</small></a></h2>
+      <h1>Assignment 4<small>AJAX</small></h1>
+      <form id="search" action="search/" method="post">
+	<input name="terms" id="search-field" placeholder="Search" autocomplete="off" spellcheck="false" type="search">
+      <div id="search-results"></div><input value="See more results »" type="submit"></form>
+    </div>
+   </header>
+
+  <article class="wrap">
+    <div class="deadline"><span>Deadline</span>Wednesday July 17<sup>th</sup></div>
+<div class="goal">
+  <span>Goal</span>
+  <p>Your task is to create a registration form. It must contain the following elements:</p>
+
+  <ul>
+    <li>A social security number(<em>SSN</em>) field, and a "Fill in name and address" button</li>
+    <li>A <em>full name</em> field, <em>street and number</em> field, <em>postal code</em> field and a <em>city</em> field.</li>
+    <li>A <em>username</em> field, a <em>password</em> field with a 'show password' checkbox below, and a "Register" button.</li>
+  </ul>
+
+  <p>
+    Try to approximate the styling of the screenshot. Hints: You will
+    probably have to disable the rounded borders to achieve CSS
+    validation. For form markup, look up
+    the <a href="http://www.w3schools.com/tags/tag_fieldset.asp"><code>fieldset</code></a>
+    and <a href="http://www.w3schools.com/tags/tag_legend.asp"><code>legend</code></a>
+    tags.
+  </p>
+  <p>
+    <img src="4_files/styling.png" id="form_styling_screen" alt="Form styling">
+  </p>
+</div>
+
+<p class="goal">
+  <span>Note</span>
+  The security settings of some browsers will not allow JavaScript
+  calls to external servers. To get around this, call directly the
+  proxy-scripts register.php, available.php and ssn_lookup.php
+  provided in the following <a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/assignments/4/scripts/assignment4proxy.zip">zip file</a>.
+  We have also put up scripts for you to call
+  at <a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/assignments/4/scripts/register.php">register.php</a>, <a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/assignments/4/scripts/available.php">available.php</a>
+  and <a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/assignments/4/scripts/ssn_lookup.php">ssn_lookup.php</a>. Additionally, you can use <a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/assignments/4/scripts/contents.php">contents.php</a>
+ for reference when testing your solution, to check what is currently in
+ the database. But be aware that contents.php is ONLY for reference. So 
+do NOT try to use contents.php as part of your solution.
+</p>
+
+<p>The form must implement the following functionality</p>
+
+<section>
+  <h2>Fill in name and address</h2>
+
+  <p>
+    When the "Fill in name and address" button is clicked, look up the
+    social security number in the sample database by
+    calling <a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/assignments/4/scripts/ssn_lookup.php">ssn_lookup.php</a>, and
+    fill in the associated data in the appropriate fields.
+  </p>
+
+  <p>
+    If the number is not found in the database, fade in a red warning
+    above the field. This warning should disappear when you start
+    writing something else in the field.
+  </p>
+
+  <p>
+    <img src="4_files/SSN_not_found.png" id="SSN_not_screen" alt="SSN entry not found">
+  </p>
+
+  <p>
+    <a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/assignments/4/scripts/ssn_lookup.php">ssn_lookup.php</a> takes
+    the argument 'ssn'. If the number exists in the database, it will
+    return the JSON object <code>{"ssn":"(Social security
+    number)","name":"(Full name)","street":"(Street and
+    number)","postal":"(Postal number)","city":"(City)"}</code>. If
+    the number does not exist, it will return the
+    boolean <code>false</code>. Entries for the following numbers are
+    already in the database: 121212121212, 182404076487 and
+    224905124895. You can try
+    calling <a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/assignments/4/scripts/ssn_lookup.php">ssn_lookup.php</a>
+    from a browser with
+    '<a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/assignments/4/scripts/ssn_lookup.php?ssn=121212121212">ssn_lookup.php?ssn=121212121212</a>'.
+  </p>
+
+  <p>
+    You can
+    use <a href="http://api.jquery.com/jQuery.get/"><code>.get</code></a>, <a href="http://api.jquery.com/jQuery.post/"><code>.post</code></a>
+    or <a href="http://api.jquery.com/jQuery.getJSON/"><code>.getJSON</code></a>
+    to call the lookup script. You can
+    use <a href="http://api.jquery.com/hide/"><code>.hide</code></a>, <a href="http://api.jquery.com/fadeIn/"><code>.fadeIn</code></a>
+    and <a href="http://api.jquery.com/fadeOut/"><code>.fadeOut</code></a>
+    for the warning message. Fading out can be activated on
+    the <a href="http://api.jquery.com/keypress/"><code>.keypress</code></a>
+    event. Values of input fields can be set
+    with <a href="http://api.jquery.com/val/"><code>.val</code></a>.
+  </p>
+
+  <p>
+    A call with the <code>.getJSON</code> function could look like this:
+  </p>
+
+<!-- <pre class="brush: js;"> -->
+<!-- $.getJSON("",      //The URL to perform the lookup -->
+<!--           {ssn: "121212121212"}, //The data you send -->
+<!--           function(result) {     //The function to fire upon return -->
+<!--               if(!result) {      //result is JSON formatted -->
+<!--                 (Execute if SSN does not exist) -->
+<!--               } -->
+<!--               else { -->
+<!--                 (Execute if SSN exists) -->
+<!--               } -->
+<!--           }); -->
+<!-- </pre> -->
+
+<div class="syntaxhighlighter">
+  <link type="text/css" rel="stylesheet" href="4_files/shCore.css">
+  <link type="text/css" rel="stylesheet" href="4_files/shThemeDefault.css">
+  <!--   <link type="text/css" rel="stylesheet" href="assignments/4/styles/shThemeFadeToGrey.css" /> -->
+  <!--   <link type="text/css" rel="stylesheet" href="assignments/4/styles/shThemeDjango.css" /> -->
+  <!--   <link type="text/css" rel="stylesheet" href="assignments/4/styles/shThemeEclipse.css" /> -->
+  <!--   <link type="text/css" rel="stylesheet" href="assignments/4/styles/shThemeMidnight.css" /> -->
+  <!--   <link type="text/css" rel="stylesheet" href="assignments/4/styles/shThemeRDark.css" /> -->
+
+  <div class="lines">
+    <div class="line alt1">
+      <table>
+	<tbody>
+	  <tr>
+	    <td class="number"><code>01</code></td>
+	    <td class="content">
+	      <code class="plain">$.getJSON(</code>
+	      <code class="string">"ssn_lookup.php"</code>
+	      <code class="plain">,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+	      <code class="comments">//The URL to perform the lookup</code>
+	    </td>
+	  </tr>
+	</tbody>
+      </table>
+    </div>
+    <div class="line alt2">
+      <table>
+	<tbody>
+	  <tr>
+	    <td class="number"><code>02</code></td>
+	    <td class="content">
+	      <code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+	      <code class="plain">{ssn: </code>
+	      <code class="string">"121212121212"</code>
+	      <code class="plain">}, </code>
+	      <code class="comments">//The data you send</code>
+            </td>
+	  </tr>
+	</tbody>
+      </table>
+    </div>
+    <div class="line alt1">
+      <table>
+	<tbody>
+	  <tr>
+	    <td class="number"><code>03</code></td>
+	    <td class="content">
+	      <code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+	      <code class="keyword">function</code>
+	      <code class="plain">(result){&nbsp;&nbsp;&nbsp;&nbsp; </code>
+	      <code class="comments">//The function to fire upon return</code>
+	    </td>
+	  </tr>
+	</tbody>
+      </table>
+    </div>
+    <div class="line alt2">
+      <table>
+	<tbody>
+	  <tr>
+	    <td class="number"><code>04</code></td>
+	    <td class="content">
+	      <code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+	      <code class="keyword">if</code>
+	      <code class="plain">(!result){&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+	      <code class="comments">//result is JSON formatted</code>
+	    </td>
+	  </tr>
+	</tbody>
+      </table>
+    </div>
+    <div class="line alt1">
+      <table>
+	<tbody>
+	  <tr>
+	    <td class="number"><code>05</code></td>
+	    <td class="content">
+	      <code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+	      <code class="plain">(Execute </code>
+	      <code class="keyword">if</code>
+	      <code class="plain">SSN does not exist)</code>
+	    </td>
+	  </tr>
+	</tbody>
+      </table>
+    </div>
+    <div class="line alt2">
+      <table>
+	<tbody>
+	  <tr>
+	    <td class="number"><code>06</code></td>
+	    <td class="content">
+	      <code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+	      <code class="plain">}</code>
+	    </td>
+	  </tr>
+	</tbody>
+      </table>
+    </div>
+    <div class="line alt1">
+      <table>
+	<tbody>
+	  <tr>
+	    <td class="number"><code>07</code></td>
+	    <td class="content">
+	      <code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+	      <code class="keyword">else</code>
+	      <code class="plain">{</code>
+	    </td>
+	  </tr>
+	</tbody>
+      </table>
+    </div>
+    <div class="line alt2">
+      <table>
+	<tbody>
+	  <tr>
+	    <td class="number"><code>08</code></td>
+	    <td class="content">
+	      <code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+	      <code class="plain">(Execute </code>
+	      <code class="keyword">if</code>
+	      <code class="plain">SSN exists)</code>
+	    </td>
+	  </tr>
+	</tbody>
+      </table>
+    </div>
+    <div class="line alt1">
+      <table>
+	<tbody>
+	  <tr>
+	    <td class="number"><code>09</code></td>
+	    <td class="content">
+	      <code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+	      <code class="plain">}</code>
+	    </td>
+	  </tr>
+	</tbody>
+      </table>
+    </div>
+    <div class="line alt2">
+      <table>
+	<tbody>
+	  <tr>
+	    <td class="number"><code>10</code></td>
+	    <td class="content">
+	      <code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+	      <code class="plain">});</code>
+	    </td>
+	  </tr>
+	</tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+  <p>And an element of the returned data can be accessed with <code>result.name</code> to get the name, for instance.</p>
+</section>
+
+<section>
+  <h2>Username taken</h2>
+  <p>
+    When the user has finished writing in the <em>username</em> field,
+    and it loses focus, check if the name is available. If the name is
+    not available, show <img src="4_files/notavailable.png"> on the
+    top right corner of the <em>username</em> field, otherwise show
+    <img src="4_files/available.png">. If the field is empty, do
+    not show either image.
+  </p>
+  <p>
+    <img src="4_files/notavailable_screen.png" id="notavailable_screen" alt="Username not available">
+    <img src="4_files/available_screen.png" id="available_screen" alt="Username available">
+  </p>
+  <p>
+    Use <a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/assignments/4/scripts/available.php">available.php</a> for
+    checking availability of a username. It takes the argument 'name',
+    and returns a boolean value indicating availability of the
+    name. The username 'twelve' already exists in the database. (Try
+    it: <a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/assignments/4/scripts/available.php?name=twelve">is
+    'twelve' available?</a>).
+  </p>
+  <p>
+    jQuery functions you may find
+    useful: <a href="http://api.jquery.com/hide/"><code>.hide</code></a>, <a href="http://api.jquery.com/show/"><code>.show</code></a>, <a href="http://api.jquery.com/blur/"><code>.blur</code></a>, <a href="http://api.jquery.com/attr/"><code>.attr</code></a>.
+  </p>
+</section>
+
+<section>
+  <h2>Password visibility</h2>
+  <p>
+    Place a checkbox below the password, with the text "show
+    password". When the checkbox is checked, make the password
+    visible.
+  </p>
+  <p>
+    This task is a little more tricky than it sounds at first. There
+    is no standard, simple way of doing this.</p>  <p>One suggestion
+    would be to use both a password input field and a text input
+    field, place them on top of each other, and when the checkbox is
+    ticked or unticked, you switch visibility of the fields
+    with <a href="http://api.jquery.com/hide/"><code>.hide</code></a>
+    and <a href="http://api.jquery.com/show/"><code>.show</code></a>,
+    and copy the content between them
+    with <a href="http://api.jquery.com/val/"><code>.val</code></a>. This
+    solution may cause some trouble when you try to position the two
+    fields on top of each other. It may also cause the form to break
+    if JavaScript is disabled. This is not an issue in this
+    assignment, but keep it in mind when you learn about graceful
+    degradation.</p>  <p>Another, more elegant solution, would be to
+    replace the field entirely when the box is ticked and
+    unticked. This can be achieved using functions such
+    as <a href="http://api.jquery.com/insertAfter/"><code>.insertAfter</code></a>, <a href="http://api.jquery.com/prev/"><code>.prev</code></a>
+    and <a href="http://api.jquery.com/remove/"><code>.remove</code></a>. This
+    solution will require more jQuery code, but may leave you with a
+    cleaner markup and stylesheet.
+  </p>
+  <p>
+    <img src="4_files/hide_pass.png" id="hide_pass_screen" alt="Hide password">
+    <img src="4_files/show_pass.png" id="show_pass_screen" alt="Show password">
+  </p>
+  <p>
+    jQuery functions you may find helpful for
+    positioning: <a href="http://api.jquery.com/position/"><code>.position</code></a>
+    and <a href="http://api.jquery.com/css/"><code>.css</code></a>
+    with the 'left' and 'top' properties for more flexible positioning
+    within the jQuery code. But again, when you learn about graceful
+    degradation, you should keep in mind that any positioning you
+    apply in jQuery will be ineffective if JavaScript is turned
+    off.
+  </p>
+</section>
+
+<section>
+  <h2>Empty field</h2>
+  <p>
+    If the "Register" button is clicked, and any of the address,
+    username or password fields are empty, fade the background of
+    those fields to red.
+  </p>
+  <p>
+    <img src="4_files/emptyfields.png" id="empty_fields_screen" alt="Empty fields">
+  </p>
+  <p>
+    When a field gains focus, or the "fill in" feature inserts text
+    into it, fade the background to black again.
+  </p>
+  <p>
+    For animating background colors, you will need to
+    use <a href="http://jqueryui.com/demos/animate/">.animate</a> with
+    the 'backgroundColor' property from <a href="http://jqueryui.com/">jQuery-ui</a>, an extra library you will have to include in your HTML.
+  </p>
+</section>
+
+<section>
+  <h2>Registering</h2>
+  <p>
+    Clicking the "Register" button while all fields are non-empty will
+    submit the form to the backend
+    via <a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/assignments/4/scripts/register.php">register.php</a>.
+  </p>
+
+  <p>
+    <a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/assignments/4/scripts/register.php">register.php</a> takes the
+    arguments 'name', 'username', 'password', 'street', 'postal', and
+    'city'. It returns a string with a message from the backend
+    indicating success or reason for failure. Fade this in next to the
+    "Register" button.
+  </p>
+  <p>
+    <img src="4_files/server_msg.png" id="server_msg_screen" alt="Server message">
+  </p>
+  <p>
+    If you use input type 'submit' for the "Register" button in the
+    form, you can intercept the submit in jQuery with a call
+    to <a href="http://api.jquery.com/event.preventDefault/"><code>event.preventDefault()</code></a>
+    from
+    the <a href="http://api.jquery.com/submit/"><code>.submit</code></a>
+    event.
+  </p>
+</section>
+  </article>
+
+    <footer>
+    <div class="wrap">
+    <ul id="navigation">
+     <li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13"><img src="4_files/home.gif" alt="Homepage"></a></li>
+     <li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/schedule/">Schedule</a></li>
+     <li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/news">News</a></li>
+      <li>
+	<ul>
+	  <li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/topic/html">HTTP / HTML</a></li><li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/topic/css">CSS</a></li><li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/topic/css-positioning">CSS Positioning</a></li><li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/topic/jquery">JQuery</a></li><li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/topic/debug-hacks">Debug / Hacks</a></li><li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/topic/css3">CSS 3</a></li><li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/topic/ajax">AJAX</a></li><li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/topic/seo">SEO</a></li><li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/topic/html5">HTML5</a></li><li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/topic/cms">CMS <small>with PHP</small></a></li><li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/topic/typography">Typography <small>+ Design</small></a></li><li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/topic/user-experience">User Experience</a></li>	</ul>
+        <a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/topics/">Topics</a>
+      </li>
+      <li id="nav-assignments">
+	<ul class="large">
+	  <li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/assignment/1">The Basics</a></li><li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/assignment/2">CSS Positioning</a></li><li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/assignment/3">JQuery</a></li><li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/assignment/4">AJAX</a></li><li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/assignment/5">Progressive Enhancement</a></li><li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/assignment/6">Web Usability</a></li>	</ul>
+        <a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/assignments/">Assignments</a>
+      </li>
+      <li id="nav-tutorials">
+	<ul>
+           <li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/tutorial/js">JS</a></li>
+           <li><a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/tutorial/php">PHP</a></li>
+	</ul>
+        <a href="http://www.it.uu.se/edu/course/homepage/websiteconst/st13/tutorials/">Tutorials</a>
+      </li>
+     <li><a href="https://www.it.uu.se/edu/course/homepage/websiteconst/st13/questions">Q &amp; A</a></li>
+      <li>
+        <ul class="large" id="contact-us">
+	  <li id="fred"><a href="http://www.it.uu.se/katalog/daz">Frédéric Haziza<small>main teacher</small></a></li>
+	  <li id="magnus"><a href="mailto:magnus.soderling@gmail.com?subject=[Website%20Construction]&amp;cc=palle.raabjerg@it.uu.se">Magnus Söderling<small>teaching assistant</small></a></li>
+	  <li id="palle"><a href="mailto:palle.raabjerg@it.uu.se?subject=[Website%20Construction]&amp;cc=magnus.soderling@gmail.com">Palle Raabjerg<small>teaching assistant</small></a></li>
+	</ul>
+	<span>Contact us</span>
+      </li>
+    </ul>
+     <p><span id="copyright" title="Copyright 2009-2013">©</span> <a href="http://www.uu.se/">Uppsala University</a><br><a href="http://www.it.uu.se/">Department of Information Technology</a></p>
+    </div>
+  </footer>
+
+  <script>
+    //<![CDATA[							
+    (function (){
+
+      var w = window,
+	d = document,
+	e = document.documentElement,
+	body = document.getElementsByTagName('body')[0],
+	width = w.innerWidth || e.clientWidth || g.clientWidth;
+      if ( width < 700 ) {
+	var obj = document.createElement('a');
+	obj.href = 'http://www.it.uu.se/edu/course/homepage/websiteconst/st13/m/';
+	obj.id = "goto-mobile";
+	obj.innerHTML = "View the mobile version";
+	body.parentNode.insertBefore(obj, body);
+      }
+    })();
+    //]]>
+  </script>
+
+
+<!--
+<script type="text/javascript">
+  (function() {
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-5435335-11']);
+    _gaq.push(['_trackPageview']);
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+-->
+
+  <!-- <script src="js/main.js"></script> -->
+  <script src="4_files/search.js"></script>
+
+
+
+</body></html>

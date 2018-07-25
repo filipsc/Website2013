@@ -1,0 +1,33 @@
+/*******  Reset  *******/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+
+/*******  Table styling  *******/
+body {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 12px;
+}
+
+#page-wrap { width: 480px; margin:50px auto; }
+
+#inventory { width: 100%; }
+
+#inventory th {
+    font-size: 1.2em; padding: 8px;
+    background: #b9c9fe; color: #039;
+    border-top: 4px solid #aabcfe; border-bottom: 1px solid #fff;
+    text-align:center;
+}
+
+#inventory td {
+    padding: 8px;
+    background: #e8edff; color: #669;
+    border-top: 1px solid transparent; border-bottom: 1px solid #fff;
+    text-align:center;
+}
+
+#inventory tr td:hover {
+    background: #d0dafd; color: #339;
+}

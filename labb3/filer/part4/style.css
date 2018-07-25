@@ -1,0 +1,30 @@
+/* Reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;padding: 0;border: 0;outline: 0;
+    font-size: 100%;vertical-align: baseline;
+    background: transparent;}
+body { line-height: 1; }
+ul {list-style: none;}
+
+/* ============================== styling ======================================= */
+body { background:#c1c1c1; }
+ 
+ul { margin: 150px auto; width: 800px; overflow: auto; /* add some more, like the image in the background */ }
+
+ul li { width: 200px; height: 100px; /* and some more properties to place them horizontally */ }
+
+ul li#shutter1 { /* the background image maybe? */ }
+ul li#shutter2 { /* the background image maybe? */ }
+ul li#shutter3 { /* the background image maybe? */ }
+ul li#shutter4 { /* the background image maybe? */ }
+
+ul li a { width: 200px; height: 100px; /* make the text go away by using text-indent, and fix the background image */ }
+
+/* extra */
+p { margin-bottom:20px; text-align:center; }
+#button { text-decoration:underline; cursor:pointer; }
+#img-container { display:none; text-align:center; }
+#img-container img {padding:5px; }
+#img-container img[alt="background"] { background-color:black; }
+#img-container img[alt="shutter"] { background-color:blue; }
+#img-container img[alt="viewer"] { background-color:green; }

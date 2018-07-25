@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Website Construction | demonstrate the importance of structure</title>
+    <link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
+    <link rel='stylesheet' id='weaver-style-sheet-css'  href='css/style-weaver.css' type='text/css' media='all' />
+    <script src="js/jquery-1.6.1.min.js"></script>
+    <script src="js/info.js"></script>
+  </head>
+
+  <body class="home blog">
+    <div id="wrapper" class="hfeed">
+      <div id="info">
+	<div class="tip">
+	  <p>In order to pass this part of the lab you need to complete the following steps on the basic site keeping the good file structure.</p>
+	  <ul>
+	    <li>Restyle the pages using the css files the nice solution uses</li>
+	    <li>Switch the information icon to the round one used in the nice solution</li>
+	    <li>Switch the banner image on the main page to the dynamic image used in the nice page</li>
+	    <li>Switch the weather icon to the round one, also change the link to point at "weather.yahoo.com"</li>
+	    <li>Make the heading of the "Hello world" post red since it is very important</li>
+	    <li>Add a link to "www.wimbledon.com" on the 20th of June in the calendar</li>
+	    <li>Use the javascript file used in the nice solution</li>
+	    <li>Make google host jquery for you using the link <code>"http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"</code></li>
+	    <li>Renaming the main directory your solution resides in or moving it into a different directory should not break the page</li>
+	  </ul>
+	</div>
+      </div>
+      <div id="header">
+        <div id="masthead">
+          <div id="ttw-site-logo"></div>
+          <div id="ttw-site-logo-link" onclick="location.href='.'" style="cursor:pointer;"></div>
+          <h1 id="site-title">
+            <span>
+              <a href="." title="Website Construction">Website Construction</a>
+            </span>
+          </h1>
+          <div id="nav-top-menu"><div id="access2" role="navigation">
+          </div></div><!-- #access2 -->
+          <div id="branding" role="banner">
+            <img src="img/wheat.jpg" width="940" height="198" alt="" />
+          </div><!-- #branding -->
+          <div id="nav-bottom-menu"><div id="access" role="navigation">
+              <div class="menu"><ul><li><a href="." title="Home">Home</a></li><li class="current_page_item page_item page-item-2"><a href="sample.html" title="Sample Page">Sample Page</a></li></ul></div>
+          </div></div><!-- #access -->
+        </div><!-- #masthead -->
+      </div><!-- #header -->
+      <div id="main">
+        <div id="container" class="container-index-loop">
+          <div id="content" role="main">
+            <div id="post-1" class="post-1 post type-post status-publish format-standard hentry category-uncategorized">
+              <h2 class="entry-title">	<a href="." title="Permalink to Hello world!" rel="bookmark">Sample</a></h2>
+              <div class="entry-meta">
+		<!--                                <span class="meta-prep meta-prep-author">Posted on</span> <a href="." title="21:29" rel="bookmark"><span class="entry-date">June 6, 2011</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="." title="View all posts by admin">admin</a></span>-->
+              </div><!-- .entry-meta -->
+
+              <div class="entry-content">
+                <p>Writing a sample humpte dumpte dum.</p>
+                <div class="clear-cols"></div>
+              </div><!-- .entry-content -->
+
+	      <!--                            <div class="entry-utility">
+					      <span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="." title="View all posts in Uncategorized" rel="category">Uncategorized</a>		</span>
+					      <span class="meta-sep meta-sep-bar">|</span>
+					      <span class="comments-link"><a href="." title="Comment on Hello world!">Leave a comment</a></span>
+              </div> .entry-utility -->
+            </div><!-- #post-## -->
+          </div><!-- #content -->
+        </div><!-- #container -->
+
+        <div id="primary" class="widget-area" role="complementary">
+          <ul class="xoxo">
+            <li id="calendar-3" class="widget-container widget_calendar"><h3 class="widget-title">&nbsp;</h3><div id="calendar_wrap"><table id="wp-calendar">
+                  <caption>June 2011</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" title="Monday">M</th>
+                      <th scope="col" title="Tuesday">T</th>
+                      <th scope="col" title="Wednesday">W</th>
+                      <th scope="col" title="Thursday">T</th>
+                      <th scope="col" title="Friday">F</th>
+                      <th scope="col" title="Saturday">S</th>
+                      <th scope="col" title="Sunday">S</th>
+                    </tr>
+                  </thead>
+
+                  <tfoot>
+                    <tr>
+                      <td colspan="3" id="prev" class="pad">&nbsp;</td>
+                      <td class="pad">&nbsp;</td>
+                      <td colspan="3" id="next" class="pad">&nbsp;</td>
+                    </tr>
+                  </tfoot>
+
+                  <tbody>
+                    <tr>
+                      <td colspan="2" class="pad">&nbsp;</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+                    </tr>
+                    <tr>
+                      <td><a href="http://www.nationaldagen.se/" title="Sveriges nationaldag">6</a></td><td>7</td><td>8</td><td id="today">9</td><td>10</td><td>11</td><td>12</td>
+                    </tr>
+                    <tr>
+                      <td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td>
+                    </tr>
+                    <tr>
+                      <td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td>
+                    </tr>
+                    <tr>
+                      <td>27</td><td>28</td><td>29</td><td>30</td>
+                      <td class="pad" colspan="3">&nbsp;</td>
+                    </tr>
+                  </tbody>
+          </table></div></li>	</ul>
+        </div><!-- #primary .widget-area -->
+      </div><!-- #main -->
+      <div id="footer">
+        <div id="colophon">
+
+          <table id='ttw_ftable'><tr>
+              <td id='ttw_ftdl'><div id="site-info">
+                  &copy; 2011 - <a href="." title="Website Construction">Website Construction</a>
+              </div></td>  <td id='ttw_ftdr'></td> </tr></table>
+        </div><!-- #colophon -->
+      </div><!-- #footer -->
+
+    </div><!-- #wrapper -->
+
+  </body>
+</html>
